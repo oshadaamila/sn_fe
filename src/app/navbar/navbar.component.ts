@@ -7,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  shows: boolean;
+  isShown: boolean;
+  constructor(
+    
+  ) { }
 
   ngOnInit() {
+    this.isShown = false;
+  }
+
+  onMenuItemClick() {
+    if (this.isShown) {
+      this.shows = false;
+      this.isShown = false;
+    } else {
+      this.shows = true;
+      this.isShown = true;
+    }
+  }
+
+  onToggleItemClick() {
+    this.isShown = !this.isShown;
+    this.shows = null;
   }
 
 }

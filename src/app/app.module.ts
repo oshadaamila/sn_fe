@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { AuthService } from "./services/auth.service";
 import { AddUserComponent } from './add-user/add-user.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { AddUserComponent } from './add-user/add-user.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
