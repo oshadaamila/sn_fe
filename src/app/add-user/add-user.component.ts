@@ -8,9 +8,12 @@ import { User } from './../user';
 })
 export class AddUserComponent implements OnInit {
 
-  constructor() { }
 
-  user = new User(1,"user", "admin");
+  model= new User(0," "," "," "," ");
+  constructor() {
+   }
+  
+
 
   ngOnInit() {
   }
@@ -21,4 +24,7 @@ export class AddUserComponent implements OnInit {
     this.submitted = true;
   }
 
+  get diagnostic() { return JSON.stringify(this.model); }
 }
+
+

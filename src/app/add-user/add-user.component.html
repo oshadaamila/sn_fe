@@ -1,16 +1,39 @@
 <div class="container">
-  <div class="container">
-    <h1>Hero Form</h1>
+
+  <div>
+    <h1>Add User</h1>
+    {{diagnostic}}
     <form>
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" required>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
       </div>
 
       <div class="form-group">
-        <label for="alterEgo">Alter Ego</label>
-        <input type="text" class="form-control" id="alterEgo">
+        <label for="userName">Username</label>
+        <input type="text" class="form-control" id="userName" required [(ngModel)]="model.username" name="username">
       </div>
+
+      <div class="form-group">
+        <label for="userType">User Type</label>
+        <select class="browser-default custom-select" required [(ngModel)]="model.type" name="type">
+          <option selected="">-- User Type --</option>
+          <option value="Admin">Admin</option>
+          <option value="Data Enter">Data Enter</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password">
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmPassword" required>
+      </div>
+
+
 
       <button type="submit" class="btn btn-success">Submit</button>
 
