@@ -9,7 +9,7 @@ import { User } from './../user';
 export class AddUserComponent implements OnInit {
 
 
-  model= new User(0," "," "," "," ");
+  model= new User(0,"","","","","");
   constructor() {
    }
   
