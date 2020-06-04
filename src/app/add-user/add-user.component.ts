@@ -9,7 +9,8 @@ import { User } from './../user';
 export class AddUserComponent implements OnInit {
 
 
-  model= new User(0,"","","","","");
+  model = new User(0, "", "", "", "", "");
+  valid = false;
   constructor() {
    }
   
@@ -24,7 +25,11 @@ export class AddUserComponent implements OnInit {
     this.submitted = true;
   }
 
-  get diagnostic() { return JSON.stringify(this.model); }
+  diagnostic() { return JSON.stringify(this.model); }
+
+  isUserValid() {
+    return this.valid;
+  }
 }
 
 

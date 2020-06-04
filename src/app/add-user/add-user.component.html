@@ -1,4 +1,5 @@
 <div class="container col-lg-6 col-md-6">
+  {{diagnostic()}}
   <div>
     <h1>Add User</h1>
     <form>
@@ -23,14 +24,13 @@
 
       <div class="form-group">
         <label for="userType">User Type</label>
-        <select class="browser-default custom-select" required [(ngModel)]="model.type" name="type">
+        <select class="browser-default custom-select" required [(ngModel)]="model.type" name="type" #type="ngModel">
           <option selected="">-- User Type --</option>
           <option value="Admin">Admin</option>
           <option value="Data Enter">Data Enter</option>
         </select>
-        {{model.type}}
-        <div *ngIf="model.type==='Admin'" class="alert alert-danger">
-          username is required
+        <div *ngIf="model.type!='Admin' && model.type != 'Data Enter' && type.touched" class="alert alert-danger">
+          Please select a correct user type
         </div>
       </div>
 
@@ -44,10 +44,7 @@
         <input type="password" class="form-control" id="confirmPassword" required [(ngModel)]="model.confirmPassword"
           name="confirmPassword">
       </div>
-
-
-
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="isUserValid">Submit</button>
 
     </form>
   </div>
