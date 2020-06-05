@@ -9,8 +9,9 @@ import { User } from './../user';
 export class AddUserComponent implements OnInit {
 
 
-  model = new User(0, "", "", "", "", "");
+  model = new User(0, "", "", "", "");
   valid = false;
+  confirm_password = '' ;
   constructor() {
    }
   
@@ -29,6 +30,22 @@ export class AddUserComponent implements OnInit {
 
   isUserValid() {
     return this.valid;
+  }
+
+  isConfirmPasswordSame() {
+    if (this.model.password === this.confirm_password) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isConfirmPasswordEmpty() {
+    if (this.confirm_password === "") {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 

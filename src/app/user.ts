@@ -5,8 +5,7 @@ export class User {
         public name: string,
         public username: string,
         public type: string,
-        public password: string,
-        public confirmPassword: string
+        public password: string
     ) { }
 
     
