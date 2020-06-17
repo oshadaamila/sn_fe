@@ -1,7 +1,7 @@
 <div class="container col-lg-6 col-md-6">
   <div>
     <h1>Add User</h1>
-    <form>
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
 
@@ -51,7 +51,7 @@
         </div>
 
       </div>
-      <button type="submit" class="btn btn-success" [disabled]="isUserValid">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid || !isUserValid()">Submit</button>
 
     </form>
   </div>

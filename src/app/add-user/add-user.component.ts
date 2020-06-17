@@ -23,13 +23,22 @@ export class AddUserComponent implements OnInit {
   submitted = false;
   
   onSubmit() {
-    this.submitted = true;
+    //TODO
   }
 
   diagnostic() { return JSON.stringify(this.model); }
 
   isUserValid() {
-    return this.valid;
+    if (this.model.type !== "Admin" ) {
+      if (this.model.type !== "Data Enter") {
+        return false;
+      }
+    }
+    if (!this.isConfirmPasswordSame()) {
+      return false;
+    }
+    
+    return true;
   }
 
   isConfirmPasswordSame() {
@@ -40,13 +49,8 @@ export class AddUserComponent implements OnInit {
     }
   }
 
-  isConfirmPasswordEmpty() {
-    if (this.confirm_password === "") {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  
+  
 }
 
 
